@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Vegano en 21 dias</string>
+
+    <!-- FullDayFragment-->
+
+    <string name="full_day_day">Dia %1$s</string>
+</resources>

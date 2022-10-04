@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "995467080238",
+    "project_id": "vegano-en-21-dias-fa869",
+    "storage_bucket": "vegano-en-21-dias-fa869.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995467080238:android:350dc734676baae85ea5bf",
+        "android_client_info": {
+          "package_name": "com.venago.en21.dias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995467080238-lggdmc53v7bdpj3rdhtk2ikpnep2g2cp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIJmfZO0uWsQNgO-y5VTHMzJmlEngDULA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995467080238-lggdmc53v7bdpj3rdhtk2ikpnep2g2cp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

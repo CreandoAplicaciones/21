@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/fullDayFragment">
+    <fragment
+        android:id="@+id/fullDayFragment"
+        android:name="com.venago.en21.dias.ui.view.fullday.FullDayFragment"
+        android:label="fragment_full_day"
+        tools:layout="@layout/fragment_full_day" >
+        <action
+            android:id="@+id/action_fullDayFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.venago.en21.dias.ui.view.recipes.RecipesFragment"
+        android:label="RecipesFragment"
+        tools:layout="@layout/fragment_recipes" >
+        <argument
+            android:name="day"
+            app:argType="integer"
+             />
+        <argument
+            android:name="typeFood"
+            app:argType="string" />
+    </fragment>
+</navigation>
