@@ -6,7 +6,7 @@
     app:startDestination="@id/fullDayFragment">
     <fragment
         android:id="@+id/fullDayFragment"
-        android:name="com.venago.en21.dias.ui.view.fullday.FullDayFragment"
+        android:name="com.vegano.en21.dias.ui.view.fullday.FullDayFragment"
         android:label="fragment_full_day"
         tools:layout="@layout/fragment_full_day" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.venago.en21.dias.ui.view.recipes.RecipesFragment"
+        android:name="com.vegano.en21.dias.ui.view.recipes.RecipesFragment"
         android:label="RecipesFragment"
         tools:layout="@layout/fragment_recipes" >
         <argument
