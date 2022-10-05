@@ -4,4 +4,16 @@
     <!-- FullDayFragment-->
 
     <string name="full_day_day">Dia %1$s</string>
+    <string name="breakfast">Desayuno</string>
+    <string name="lunch">Almuerzo</string>
+    <string name="dinner">Cena</string>
+
+    <string name="ingredients">Ingredientes</string>
+    <string name="recipe">Receta</string>
+
+    <string name="full_day_go_to_day">Ir al dia %1$s</string>
+    <string name="full_day_back_to_day">Volver al dia %1$s</string>
+
+
+
 </resources>

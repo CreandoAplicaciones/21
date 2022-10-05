@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.venago.en21.dias">
+    package="com.vegano.en21.dias">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".save.SaveSheared"
-        android:theme="@style/Theme.VeganoEn21Dias"
+        android:name="com.vegano.en21.dias.save.SaveSheared"
+        android:theme="@style/Theme.VeganoEn21Dias.NoActionBar"
         android:supportsRtl="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
         android:allowBackup="true">
-        <activity android:name="com.venago.en21.dias.ui.view.main.MainActivity" android:exported="true">
+        <activity android:name="com.vegano.en21.dias.ui.view.main.MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-</application>
+    </application>
 
 </manifest>
