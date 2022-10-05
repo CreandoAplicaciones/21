@@ -4,10 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/drawable/gradient.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/drawable/gradient_orange.xml" value="0.1" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/drawable/gradient_purple.xml" value="0.1" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/drawable/ic_baseline_arrow_circle_left_24.xml" value="0.128" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/drawable/ic_baseline_arrow_circle_right_24.xml" value="0.128" />
         <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
-        <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/layout/comida_items.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/layout/comida_items.xml" value="0.22" />
         <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/layout/fragment_day.xml" value="0.14130434782608695" />
-        <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/layout/fragment_full_day.xml" value="0.14130434782608695" />
+        <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/layout/fragment_full_day.xml" value="0.22" />
         <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/layout/fragment_nueva.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/pedro/AndroidStudioProjects/Veganoen21dias/app/src/main/res/layout/fragment_recipes.xml" value="0.14130434782608695" />
       </map>

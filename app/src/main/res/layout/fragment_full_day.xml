@@ -10,10 +10,12 @@
         android:id="@+id/textDay"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Dia 1"
+        tools:text="Dia 1"
         android:layout_marginTop="5dp"
         android:textSize="30sp"
+        android:fontFamily="@font/montserrat500"
         android:gravity="center"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -25,8 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingEnd="10dp"
-        android:paddingStart="10dp">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,62 +37,69 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintBreakfast"
+                android:paddingHorizontal="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-                <TextView
-                    android:id="@+id/textBreakfast"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Desayuno"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                </TextView>
+                android:layout_height="wrap_content">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardViewBreakfast"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:layout_margin="8dp"
                     android:clipToPadding="true"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/textBreakfast"
+                    app:cardCornerRadius="100dp"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     >
+
                     <ImageView
                         android:id="@+id/imageBreakfast"
                         android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        >
-                    </ImageView>
+                        android:layout_height="150dp" />
                 </androidx.cardview.widget.CardView>
 
                 <View
                     android:id="@+id/viewBreakfast"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/gradient"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="-80dp"
+                    android:paddingBottom="90dp"
+                    android:background="@drawable/gradient_pink"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/cardViewBreakfast"/>
+
+                <TextView
+                    android:id="@+id/textBreakfast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:fontFamily="@font/montserrat500"
+                    android:gravity="center"
+                    android:text="@string/breakfast"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/viewBreakfast"
+                    app:layout_constraintStart_toStartOf="@+id/viewBreakfast"
+                    app:layout_constraintTop_toBottomOf="@id/cardViewBreakfast" />
 
                 <TextView
                     android:id="@+id/textNameBreakfast"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/white"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/montserrat400"
+                    android:gravity="center"
+                    android:textSize="17sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/cardViewBreakfast"
-                    app:layout_constraintTop_toTopOf="@id/cardViewBreakfast"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textBreakfast"
                     tools:text="Pan con tomate">
 
                 </TextView>
@@ -102,65 +110,74 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLunch"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-                <TextView
-                    android:id="@+id/textLunch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Almuerzo"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-                </TextView>
+                android:layout_height="wrap_content">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardViewLunch"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:layout_margin="8dp"
                     android:clipToPadding="true"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/textLunch"
+                    app:cardCornerRadius="100dp"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     >
                     <ImageView
                         android:id="@+id/imageLunch"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-
-                        >
-                    </ImageView>
+                        />
                 </androidx.cardview.widget.CardView>
 
                 <View
                     android:id="@+id/viewLunch"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/gradient"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="-80dp"
+                    android:paddingBottom="90dp"
+                    android:background="@drawable/gradient_orange"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/cardViewLunch"/>
+
+                <TextView
+                    android:id="@+id/textLunch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:fontFamily="@font/montserrat500"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:text="@string/lunch"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/viewLunch"
+                    app:layout_constraintStart_toStartOf="@+id/viewLunch"
+                    app:layout_constraintTop_toBottomOf="@id/cardViewLunch" />
 
                 <TextView
                     android:id="@+id/textNameLunch"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/white"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/montserrat400"
+                    android:gravity="center"
+                    android:textSize="17sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/cardViewLunch"
-                    app:layout_constraintTop_toTopOf="@id/cardViewLunch"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textLunch"
                     tools:text="Pan con tomate">
 
                 </TextView>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -168,70 +185,82 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintDinner"
+                android:layout_marginTop="10dp"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-                <TextView
-                    android:id="@+id/textDinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cena"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
+                android:layout_height="wrap_content">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardViewDinner"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:layout_margin="8dp"
                     android:clipToPadding="true"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/textDinner"
+                    app:cardCornerRadius="100dp"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     >
                     <ImageView
                         android:id="@+id/imageDinner"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        >
-                    </ImageView>
+                        />
                 </androidx.cardview.widget.CardView>
 
                 <View
                     android:id="@+id/viewDinner"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/gradient"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="-80dp"
+                    android:paddingBottom="90dp"
+                    android:background="@drawable/gradient_purple"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/cardViewDinner"/>
+
+                <TextView
+                    android:id="@+id/textDinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:fontFamily="@font/montserrat500"
+                    android:gravity="center"
+                    android:text="@string/dinner"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/viewDinner"
+                    app:layout_constraintStart_toStartOf="@+id/viewDinner"
+                    app:layout_constraintTop_toBottomOf="@id/cardViewDinner" />
 
                 <TextView
                     android:id="@+id/textNameDinner"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
+                    android:paddingBottom="20dp"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/white"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/montserrat400"
+                    android:gravity="center"
+                    android:textSize="17sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/cardViewDinner"
-                    app:layout_constraintTop_toTopOf="@id/cardViewDinner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textDinner"
                     tools:text="Pan con tomate">
 
                 </TextView>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
 
-    <Button
+    <ImageView
         android:id="@+id/buttonNext"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -241,7 +270,7 @@
         android:layout_marginEnd="10dp"
         android:background="@drawable/ic_baseline_arrow_circle_right_24"/>
 
-    <Button
+    <ImageView
         android:id="@+id/button_previous"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -250,6 +279,17 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="10dp"
         android:background="@drawable/ic_baseline_arrow_circle_left_24"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

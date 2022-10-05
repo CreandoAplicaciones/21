@@ -9,7 +9,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.venago.en21.dias"
+        applicationId "com.vegano.en21.dias"
         minSdk 21
         targetSdk 32
         versionCode 1
