@@ -29,6 +29,10 @@ class RecipesViewModel : BaseViewModel() {
     }
 
     private fun getRecipes(day: Int, typeFood: String) {
+        var ingredients = ""
+        var steps = ""
+        var title = ""
+        var image = ""
         viewModelScope.launch {
             doAction(Event.ShowLoad(true))
             (Dispatchers.IO)
@@ -36,10 +40,18 @@ class RecipesViewModel : BaseViewModel() {
             breakfast.get()
                 .addOnSuccessListener { document ->
                     document.let {
-                        val ingredients = document.data?.get(INGREDIENTS) as String
-                        val steps = document.data?.get(STEPS) as String
-                        val title = document.data?.get(TITLE) as String
-                        val image = document.data?.get(IMAGE) as String
+                        if(document.data?.get(INGREDIENTS) != null) {
+                            ingredients = document.data?.get(INGREDIENTS) as String
+                        }
+                        if(document.data?.get(STEPS) != null) {
+                            steps = document.data?.get(STEPS) as String
+                        }
+                        if(document.data?.get(TITLE) != null) {
+                            title = document.data?.get(TITLE) as String
+                        }
+                        if(document.data?.get(IMAGE) != null) {
+                            image = document.data?.get(IMAGE) as String
+                        }
                         doAction(Event.ShowRecipes(Utils.replaceString(ingredients), Utils.replaceString(steps), title, image))
                     }
                 }
