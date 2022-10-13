@@ -28,7 +28,7 @@ class Utils {
             }
         }
 
-        fun replaceString(text: String): String = text.replace("..","\n")
+        fun replaceString(text: String): String = text.replace("|","\n")
 
     }
 }

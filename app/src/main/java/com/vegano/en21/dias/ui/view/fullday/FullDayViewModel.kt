@@ -59,7 +59,7 @@ class FullDayViewModel : BaseViewModel() {
 
     private fun getBreakFast(day: Int) {
         var title = ""
-        var image = ""
+        var image = IMAGE_DEFAULT
         viewModelScope.launch {
             doAction(Event.ShowLoad(true))
             val breakfast = db.collection("$day" + DAY).document(BREAKFAST)
@@ -69,10 +69,10 @@ class FullDayViewModel : BaseViewModel() {
                         if (document.data?.get(TITLE) != null ) {
                             title = document.data?.get(TITLE) as String
                         }
-                        if (document.data?.get(IMAGE) != null ) {
+                        if (document.data?.get(IMAGE) != null && document.data?.get(IMAGE) != "" ) {
                             image = document.data?.get(IMAGE) as String
                         }
-                        doAction(Event.ShowBreakfast(title, image))
+                        doAction(Event.ShowBreakfast(Utils.replaceString(title) , image))
                         getLunch(day)
                     }
                 }
@@ -82,7 +82,7 @@ class FullDayViewModel : BaseViewModel() {
 
     private fun getLunch(day: Int) {
         var title = ""
-        var image = ""
+        var image = IMAGE_DEFAULT
         viewModelScope.launch {
             val breakfast = db.collection("$day" + DAY).document(LUNCH)
             breakfast.get()
@@ -91,7 +91,7 @@ class FullDayViewModel : BaseViewModel() {
                         if (document.data?.get(TITLE) != null ) {
                             title = document.data?.get(TITLE) as String
                         }
-                        if (document.data?.get(IMAGE) != null ) {
+                        if (document.data?.get(IMAGE) != null && document.data?.get(IMAGE) != "" ) {
                             image = document.data?.get(IMAGE) as String
                         }
                         doAction(Event.ShowLunch(title, image))
@@ -104,18 +104,18 @@ class FullDayViewModel : BaseViewModel() {
 
     private fun getDinner(day: Int) {
         var title = ""
-        var image = ""
+        var image = IMAGE_DEFAULT
         viewModelScope.launch {
             doAction(Event.ShowLoad(true))
             (Dispatchers.IO)
-            val breakfast = db.collection("$day" + DAY).document(LUNCH)
+            val breakfast = db.collection("$day" + DAY).document(DINNER)
             breakfast.get()
                 .addOnSuccessListener { document ->
                     document?.let {
                         if (document.data?.get(TITLE) != null ) {
                             title = document.data?.get(TITLE) as String
                         }
-                        if (document.data?.get(IMAGE) != null ) {
+                        if (document.data?.get(IMAGE) != null && document.data?.get(IMAGE) != "" ) {
                             image = document.data?.get(IMAGE) as String
                         }
                         doAction(Event.ShowDinner(title, image))

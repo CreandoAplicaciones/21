@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_gray_light"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.view.fullday.FullDayFragment">
 
@@ -25,7 +25,7 @@
         android:background="@color/food_frame"
         android:textSize="30sp"
         android:textColor="@color/white"
-        android:fontFamily="@font/montserrat500"
+        android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,6 +35,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/textDay"
         app:layout_constraintBottom_toTopOf="@id/constraintButom"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,18 +86,27 @@
 
                 <TextView
                     android:id="@+id/textBreakfast"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:fontFamily="@font/montserrat500"
+                    android:fontFamily="@font/roboto_medium"
                     android:gravity="center"
                     android:text="@string/breakfast"
                     android:textColor="@color/white"
                     android:textSize="25sp"
+                    android:paddingHorizontal="10dp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/viewBreakfast"
                     app:layout_constraintStart_toStartOf="@+id/viewBreakfast"
                     app:layout_constraintTop_toBottomOf="@id/cardViewBreakfast" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/textBreakfast"
+                    app:layout_constraintStart_toStartOf="@id/textBreakfast"
+                    app:layout_constraintEnd_toEndOf="@id/textBreakfast"/>
 
                 <TextView
                     android:id="@+id/textNameBreakfast"
@@ -106,7 +116,8 @@
                     android:paddingTop="10dp"
                     android:textColor="@color/white"
                     android:layout_marginHorizontal="20dp"
-                    android:fontFamily="@font/montserrat400"
+                    android:fontFamily="@font/montserrat500"
+                    android:textStyle="bold"
                     android:gravity="center"
                     android:textSize="17sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -160,18 +171,27 @@
 
                 <TextView
                     android:id="@+id/textLunch"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:fontFamily="@font/montserrat500"
+                    android:fontFamily="@font/roboto_medium"
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:text="@string/lunch"
                     android:textSize="25sp"
                     android:textStyle="bold"
+                    android:paddingHorizontal="10dp"
                     app:layout_constraintEnd_toEndOf="@+id/viewLunch"
                     app:layout_constraintStart_toStartOf="@+id/viewLunch"
                     app:layout_constraintTop_toBottomOf="@id/cardViewLunch" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/textLunch"
+                    app:layout_constraintStart_toStartOf="@id/textLunch"
+                    app:layout_constraintEnd_toEndOf="@id/textLunch"/>
 
                 <TextView
                     android:id="@+id/textNameLunch"
@@ -181,7 +201,8 @@
                     android:paddingTop="10dp"
                     android:textColor="@color/white"
                     android:layout_marginHorizontal="20dp"
-                    android:fontFamily="@font/montserrat400"
+                    android:fontFamily="@font/montserrat500"
+                    android:textStyle="bold"
                     android:gravity="center"
                     android:textSize="17sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -228,27 +249,36 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginTop="-80dp"
-                    android:paddingBottom="90dp"
                     android:background="@drawable/gradient_purple"
+                    android:paddingBottom="90dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardViewDinner"/>
+                    app:layout_constraintTop_toBottomOf="@id/cardViewDinner" />
 
                 <TextView
                     android:id="@+id/textDinner"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
-                    android:fontFamily="@font/montserrat500"
+                    android:fontFamily="@font/roboto_medium"
                     android:gravity="center"
                     android:text="@string/dinner"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold"
+                    android:paddingHorizontal="10dp"
                     app:layout_constraintEnd_toEndOf="@+id/viewDinner"
                     app:layout_constraintStart_toStartOf="@+id/viewDinner"
                     app:layout_constraintTop_toBottomOf="@id/cardViewDinner" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/textDinner"
+                    app:layout_constraintStart_toStartOf="@id/textDinner"
+                    app:layout_constraintEnd_toEndOf="@id/textDinner"/>
 
                 <TextView
                     android:id="@+id/textNameDinner"
@@ -258,7 +288,8 @@
                     android:paddingTop="10dp"
                     android:textColor="@color/white"
                     android:layout_marginHorizontal="20dp"
-                    android:fontFamily="@font/montserrat400"
+                    android:fontFamily="@font/montserrat500"
+                    android:textStyle="bold"
                     android:gravity="center"
                     android:textSize="17sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -278,17 +309,19 @@
         android:id="@+id/constraintButom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
 
-        <Button
+        <TextView
             android:id="@+id/buttonNext"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_margin="5dp"
             tools:text="@string/full_day_go_to_day"
+            android:gravity="center"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:fontFamily="@font/montserrat500"
@@ -303,13 +336,14 @@
             app:layout_constraintStart_toEndOf="@id/button_previous"
             />
 
-        <Button
+        <TextView
             android:id="@+id/button_previous"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_margin="5dp"
             tools:text="@string/full_day_back_to_day"
             android:textAllCaps="false"
+            android:gravity="center"
             android:fontFamily="@font/montserrat500"
             android:textSize="15sp"
             android:textStyle="bold"

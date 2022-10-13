@@ -2,7 +2,7 @@ package com.vegano.en21.dias.ui.base
 
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.sixtema.smartiago.common.extension.observe
+import com.vegano.en21.dias.ui.common.extension.observe
 import com.vegano.en21.dias.R
 import com.vegano.en21.dias.ui.base.BaseEvent.*
 import kotlinx.coroutines.flow.Flow

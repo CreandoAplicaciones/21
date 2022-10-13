@@ -1,4 +1,4 @@
-package com.sixtema.smartiago.common.extension
+package com.vegano.en21.dias.ui.common.extension
 
 import android.util.Log
 import androidx.lifecycle.Lifecycle

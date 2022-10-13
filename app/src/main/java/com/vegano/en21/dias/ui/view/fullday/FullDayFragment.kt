@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.sixtema.smartiago.common.extension.observe
+import com.vegano.en21.dias.ui.common.extension.observe
 import com.vegano.en21.dias.R
 import com.vegano.en21.dias.databinding.FragmentFullDayBinding
 import com.vegano.en21.dias.extensionfuntions.load
 import com.vegano.en21.dias.ui.base.BaseFragment
 import com.vegano.en21.dias.ui.view.fullday.FullDayViewModel.Event.*
-import com.vegano.en21.dias.ui.view.recipes.RecipesViewModel
 
 
 class FullDayFragment : BaseFragment() {

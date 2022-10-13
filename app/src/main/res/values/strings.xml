@@ -14,6 +14,14 @@
     <string name="full_day_go_to_day">Ir al dia %1$s</string>
     <string name="full_day_back_to_day">Volver al dia %1$s</string>
 
+    <string name="totorial_this_app">Esta App está pensada para cambiar tus habitos de alimentación a una dieta más saludable y sostenible, vasadas en plantas</string>
+    <string name="totorial_your_body">Tu cuerpo no está acostumbrado a esta alimentación, es por ello que algunos dias tendremos que comer algun pez o pollo, hasta que tu cuerpo se acostumbre</string>
+    <string name="tutorial_are_you_ready">¿Estas preparado para aceptar el reto?</string>
+    <string name="tutorial_thank_you">Gracias por ayudar a que el Mundo sea un lugar mejor</string>
+    <string name="tutorial_accept_challenge">Aceptar el reto</string>
+
+    <string name="exit_app">Presiona de nuevo atrás si quieres salir de la app</string>
+
 
 
 </resources>

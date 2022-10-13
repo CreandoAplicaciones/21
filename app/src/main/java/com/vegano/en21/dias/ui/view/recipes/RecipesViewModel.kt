@@ -32,7 +32,7 @@ class RecipesViewModel : BaseViewModel() {
         var ingredients = ""
         var steps = ""
         var title = ""
-        var image = ""
+        var image = IMAGE_DEFAULT
         viewModelScope.launch {
             doAction(Event.ShowLoad(true))
             (Dispatchers.IO)
@@ -49,10 +49,10 @@ class RecipesViewModel : BaseViewModel() {
                         if(document.data?.get(TITLE) != null) {
                             title = document.data?.get(TITLE) as String
                         }
-                        if(document.data?.get(IMAGE) != null) {
+                        if (document.data?.get(IMAGE) != null && document.data?.get(IMAGE) != "") {
                             image = document.data?.get(IMAGE) as String
                         }
-                        doAction(Event.ShowRecipes(Utils.replaceString(ingredients), Utils.replaceString(steps), title, image))
+                        doAction(Event.ShowRecipes(Utils.replaceString(ingredients), Utils.replaceString(steps), Utils.replaceString(title), image))
                     }
                 }
             doAction(Event.ShowLoad(false))

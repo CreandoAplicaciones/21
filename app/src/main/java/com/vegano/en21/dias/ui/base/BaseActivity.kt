@@ -3,7 +3,7 @@ package com.vegano.en21.dias.ui.base
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-import com.sixtema.smartiago.common.extension.observe
+import com.vegano.en21.dias.ui.common.extension.observe
 import com.vegano.en21.dias.R
 import kotlinx.coroutines.flow.Flow
 

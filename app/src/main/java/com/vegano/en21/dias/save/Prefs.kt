@@ -7,17 +7,12 @@ import com.bumptech.glide.Glide
 class Prefs (val context: Context) {
 
     val SHARED_NAME="Mydbt"
-    val SHARED_USER_NAME="username"
-    val SHARED_VIP="vip"
     val SHARED_DAY="day"
-    val SHARED_MEAL="meal"
+    val SHARED_IS_FIRST_DAY="first_day"
+
 
 
     val storage=context.getSharedPreferences(SHARED_NAME,0)
-
-
-
-
 
     fun saveDay(dayNumber: Int){
         storage.edit().putInt(SHARED_DAY,dayNumber).apply()
@@ -27,31 +22,16 @@ class Prefs (val context: Context) {
         return  storage.getInt(SHARED_DAY,1)
     }
 
-    fun saveMeat(meatName: String){
-        storage.edit().putString(SHARED_MEAL,meatName).apply()
+    fun saveFirstDay(isFirstDay: Boolean){
+        storage.edit().putBoolean(SHARED_IS_FIRST_DAY, isFirstDay).apply()
     }
 
-    fun getMeat():String{
-        return  storage.getString(SHARED_MEAL,"")!!
-    }
-
-    fun saveVIP(vip:Boolean){
-        storage.edit().putBoolean(SHARED_VIP, vip).apply()
-    }
-
-    fun getVIP():Boolean{
-        return  storage.getBoolean(SHARED_VIP,false)
+    fun getFirstDay():Boolean{
+        return  storage.getBoolean(SHARED_IS_FIRST_DAY, false)
     }
 
 
-fun contextImagen(urlImagen: String, imageView: ImageView) {
-    context?.let {
-        Glide.with(it)
-            .load(urlImagen)
-            .centerCrop().into(imageView)
-    }
 
-}
 
 
 }
