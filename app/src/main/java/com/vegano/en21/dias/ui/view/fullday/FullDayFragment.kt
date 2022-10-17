@@ -61,6 +61,5 @@ class FullDayFragment : BaseFragment() {
             is ShowBackButton -> binding.buttonPrevious.text = getString(R.string.full_day_back_to_day, model.day.toString())
             is ShowNextButton -> binding.buttonNext.text = getString(R.string.full_day_go_to_day, model.day.toString())
         }
-
     }
 }

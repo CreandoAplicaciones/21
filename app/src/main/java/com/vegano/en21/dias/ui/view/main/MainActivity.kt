@@ -32,17 +32,6 @@ class MainActivity : BaseActivity() {
         binding.adViewSup.loadAd(adRequest)
         binding.adViewInf.loadAd(adRequest)
     }
-
-
-    override fun onBackPressed() {
-        if (backPressedTime + 3000 > System.currentTimeMillis()) {
-            super.onBackPressed()
-            finish()
-        } else {
-            Toast.makeText(this, getString(R.string.exit_app), Toast.LENGTH_LONG).show()
-        }
-        backPressedTime = System.currentTimeMillis()
-    }
 }
 
 
