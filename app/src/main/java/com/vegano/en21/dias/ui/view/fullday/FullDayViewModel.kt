@@ -3,9 +3,11 @@ package com.vegano.en21.dias.ui.view.fullday
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.vegano.en21.dias.save.SaveSheared
 import com.vegano.en21.dias.save.SaveSheared.Companion.prefs
 import com.vegano.en21.dias.ui.base.BaseViewModel
 import com.vegano.en21.dias.ui.common.*
+import com.vegano.en21.dias.ui.view.main.MainViewModel
 import com.vegano.en21.dias.ui.view.recipes.RecipesViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
@@ -16,6 +18,7 @@ class FullDayViewModel : BaseViewModel() {
 
     sealed class Event {
         object SetUp : Event()
+        object InitialInterstitial : Event()
         data class ShowNumberDay(val numberDay: String,) : Event()
         data class ShowBreakfast(val titleBreakfast: String, val imageBreakfast: String) : Event()
         data class ShowLunch (val titleLunch: String, val imageLunch: String) : Event()
@@ -24,10 +27,12 @@ class FullDayViewModel : BaseViewModel() {
         data class ShowLoad(val isVisible: Boolean): Event()
         data class ShowNextButton(val day: Int): Event()
         data class ShowBackButton(val day: Int): Event()
-
+        data class ShowInterstitial(val isVisible: Boolean): Event()
     }
 
     private var maxDay: Long = 21
+    private var interstitial = false
+    private var numberClick: Long = 10
     private var db = Firebase.firestore
     private val eventChannel = Channel<Event>(Channel.BUFFERED)
     val eventsFlow = eventChannel.receiveAsFlow()
@@ -35,8 +40,11 @@ class FullDayViewModel : BaseViewModel() {
     //region ViewModel Input
     fun initFlow() {
         doAction(Event.SetUp)
+        doAction(Event.InitialInterstitial)
         doAction(Event.ShowNumberDay(prefs.getDay().toString()))
+        numberClick = prefs.getClick()
         getBreakFast(prefs.getDay())
+        getAdmobInterstitial()
         maxDay()
     }
 
@@ -127,6 +135,46 @@ class FullDayViewModel : BaseViewModel() {
 
     }
 
+
+    private fun getAdmobInterstitial() {
+        viewModelScope.launch {
+            val maximum = db.collection(ADMOB).document(INTERSTICIAL)
+            maximum.get()
+                .addOnSuccessListener { document ->
+                    document?.let {
+                        if(document.data?.get(SHOW_INTERSTICIAL) != null){
+                            interstitial = document.data?.get(SHOW_INTERSTICIAL) as Boolean
+                        }
+                    }
+                }
+        }
+    }
+
+    private fun getNumberInterstitial() {
+        viewModelScope.launch {
+            val maximum = db.collection(ADMOB).document(INTERSTICIAL)
+            maximum.get()
+                .addOnSuccessListener { document ->
+                    document?.let {
+                        if(document.data?.get(NUMBER_INTERSTITIAL) != null){
+                            numberClick = document.data?.get(NUMBER_INTERSTITIAL) as Long
+                            prefs.saveClick(numberClick)
+                        }
+                    }
+                }
+        }
+    }
+
+    private fun didOnClick() {
+        if (numberClick <= 0) {
+            doAction(Event.ShowInterstitial(interstitial))
+            getNumberInterstitial()
+        } else {
+            numberClick -= 1
+            prefs.saveClick(numberClick-1)
+        }
+    }
+
     fun nextDay() {
         if (prefs.getDay() < maxDay) {
             prefs.saveDay(prefs.getDay() + 1)
@@ -139,6 +187,7 @@ class FullDayViewModel : BaseViewModel() {
         doAction(Event.ShowNumberDay(prefs.getDay().toString()))
         doAction(Event.ShowNextButton(Utils.calculateNextDay(prefs.getDay(), maxDay.toInt())))
         doAction(Event.ShowBackButton(Utils.calculateBackDay(prefs.getDay(), maxDay.toInt())))
+        didOnClick()
     }
 
 
@@ -154,16 +203,23 @@ class FullDayViewModel : BaseViewModel() {
         doAction(Event.ShowNumberDay(prefs.getDay().toString()))
         doAction(Event.ShowNextButton(Utils.calculateNextDay(prefs.getDay(), maxDay.toInt())))
         doAction(Event.ShowBackButton(Utils.calculateBackDay(prefs.getDay(), maxDay.toInt())))
+        didOnClick()
     }
 
     fun didClickBreakfast() {
         doAction(Event.GoToRecipes(prefs.getDay(), BREAKFAST))
+        didOnClick()
     }
     fun didClickLunch() {
         doAction(Event.GoToRecipes(prefs.getDay(), LUNCH))
+        didOnClick()
     }
     fun didClickDinner() {
         doAction(Event.GoToRecipes(prefs.getDay(), DINNER))
+        didOnClick()
+    }
+    fun showedInterstitial() {
+        doAction(Event.InitialInterstitial)
     }
 
     //endregion

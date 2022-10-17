@@ -6,9 +6,10 @@ import com.bumptech.glide.Glide
 
 class Prefs (val context: Context) {
 
-    val SHARED_NAME="Mydbt"
-    val SHARED_DAY="day"
-    val SHARED_IS_FIRST_DAY="first_day"
+    private val SHARED_NAME="Mydbt"
+    private val SHARED_CLICK="click"
+    private val SHARED_DAY="day"
+    private val SHARED_IS_FIRST_DAY="first_day"
 
 
 
@@ -30,6 +31,13 @@ class Prefs (val context: Context) {
         return  storage.getBoolean(SHARED_IS_FIRST_DAY, false)
     }
 
+    fun saveClick(numberClick: Long){
+        storage.edit().putLong(SHARED_CLICK, numberClick).apply()
+    }
+
+    fun getClick():Long{
+        return  storage.getLong(SHARED_CLICK, 10)
+    }
 
 
 
