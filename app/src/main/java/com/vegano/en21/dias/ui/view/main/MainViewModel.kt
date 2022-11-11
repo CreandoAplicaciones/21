@@ -3,7 +3,6 @@ package com.vegano.en21.dias.ui.view.main
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.vegano.en21.dias.save.SaveSheared
 import com.vegano.en21.dias.ui.base.BaseViewModel
 import com.vegano.en21.dias.ui.common.*
 import kotlinx.coroutines.channels.Channel

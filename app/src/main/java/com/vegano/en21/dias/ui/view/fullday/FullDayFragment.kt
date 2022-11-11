@@ -52,7 +52,6 @@ class FullDayFragment : BaseFragment() {
                 binding.viewDinner.setOnClickListener { viewModel.didClickDinner() }
             }
             is InitialInterstitial -> {
-
                 MobileAds.initialize(requireContext()) {}
                 InterstitialAd.load(requireContext(),"ca-app-pub-4849545913451935/2895475350", adRequest, object : InterstitialAdLoadCallback() {
                     override fun onAdFailedToLoad(adError: LoadAdError) {

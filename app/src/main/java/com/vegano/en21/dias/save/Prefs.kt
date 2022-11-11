@@ -1,8 +1,6 @@
 package com.vegano.en21.dias.save
 
 import android.content.Context
-import android.widget.ImageView
-import com.bumptech.glide.Glide
 
 class Prefs (val context: Context) {
 
@@ -11,9 +9,7 @@ class Prefs (val context: Context) {
     private val SHARED_DAY="day"
     private val SHARED_IS_FIRST_DAY="first_day"
 
-
-
-    val storage=context.getSharedPreferences(SHARED_NAME,0)
+    val storage = context.getSharedPreferences(SHARED_NAME,0)
 
     fun saveDay(dayNumber: Int){
         storage.edit().putInt(SHARED_DAY,dayNumber).apply()
